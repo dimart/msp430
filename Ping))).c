@@ -8,7 +8,7 @@ int main(void)
 	P1DIR |= BIT4;
 	P1OUT |= BIT4;
 
-  //<magic>
+        //<magic>
 	//UCSCTL0 = 0x0000;
 	//UCSCTL0 = 0x0000;                         // Set lowest possible DCOx, MODx
 	  UCSCTL1 = DCORSEL_5;                      // Select DCO range 24MHz operation
