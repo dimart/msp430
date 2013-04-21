@@ -8,16 +8,11 @@ int main(void)
 	P1DIR |= BIT4;
 	P1OUT |= BIT4;
 
-        //<magic>
-	//UCSCTL0 = 0x0000;
-	//UCSCTL0 = 0x0000;                         // Set lowest possible DCOx, MODx
-	  UCSCTL1 = DCORSEL_5;                      // Select DCO range 24MHz operation
-	  UCSCTL2 = 1;
-
-	  UCSCTL3 |= SELREF_2;                      // Set DCO FLL reference = REFO
-	  UCSCTL4 |= SELS_2;
-	  UCSCTL6 |= XT2DRIVE_2;
-	//</magic>
+	UCSCTL1 = DCORSEL_5;                      // Select DCO range 24MHz operation
+	UCSCTL2 = 1;
+	UCSCTL3 |= SELREF_2;                      // Set DCO FLL reference = REFO
+	UCSCTL4 |= SELS_2;
+	UCSCTL6 |= XT2DRIVE_2;
 
 	TA0CCR0 = 1;
 	TA0CTL = TASSEL_2 + MC_1 + TACLR  ;
